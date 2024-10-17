@@ -1,0 +1,97 @@
+---
+title: "HW-6"
+format: html
+editor: visual
+---
+
+Task 1: Conceptual Questions
+
+---
+#According to a source, the lapply() function returns a list of the same length as "x", each element of which is the result of applying 'FUN' to the "x".
+
+#lapply(X, FUN, …)
+---
+
+```{r}
+#lapply(cor(numeric_matrix, method = "kendall"))
+```
+
+```{r}
+#Two advantages of using "purrr" functions as opposed to the "BaseR" apply family is that "purrr" functions provide an entire/complete and consistent group of tools for working with functions and tools. Additionally, another source states that "purr" functions have "consistent naming".
+
+#SOURCES:
+#https://purrr.tidyverse.org/ 
+#https://purrr.tidyverse.org/articles/base.html
+```
+
+```{r}
+# A side-effect function is a function that happens as a result of something, but however, is not returned.
+```
+
+```{r}
+#You can name a variable "sd" in a function, and not cause any issues with the "sd" function, as long as you use the variable in different ways. 
+```
+
+Task 2 - Writing R Functions
+
+```{r}
+#set.seed(10)
+#n <- 100
+#x <- runif(n)
+#resp <- 3 + 10 * x + rnorm(n)
+#pred <- predict(lm(resp ~ x), data.frame(x))
+```
+
+```{r}
+#getMRSE(resp, pred)
+```
+
+```{r}
+#getMAE(resp, pred)
+```
+
+Let’s create a wrapper function that can be used to get either or both metrics returned with a single
+function call. Do not rewrite your above two functions, call them inside the wrapper function (we
+would call the getRMSE() and getMAE() functions helper functions). When returning your values,
+give them appropriate names.
+• The function should check that two numeric (atomic) vectors have been passed (consider is.vector(),
+is.atomic(), and is.numeric()). If not, a message should print and the function should exit.
+• The function should return both metrics by default and include names. The behavior should be able
+to be changed using a character string of metrics to find.
+
+```{r}
+#wrapper <- function(getRMSE(), getMAE())
+```
+
+Task 3
+
+```{r}
+#install.packages('httr')
+```
+
+```{r}
+#url <- httr::GET("https://newsapi.org/v2/everything?q=gamestop&from=2024-10-01&language=en&pageSize=100&apiKey=myKeyGoesHere")
+```
+
+```{r}
+#purrr::pluck(url, articles)
+```
+
+```{r}
+# Creating contingency table from vec using table()
+#conTable = table(articles)
+#print(conTable)
+```
+
+```{r}
+#install.package("lubridate")
+```
+
+```{r}
+#pub_diff <- lag(mutate(time))
+```
+
+```{r}
+#map(pub_diff)
+#map(publishedAt)
+```
